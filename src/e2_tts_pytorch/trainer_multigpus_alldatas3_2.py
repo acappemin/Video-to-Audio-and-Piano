@@ -483,7 +483,7 @@ class Text2AudioDataset(Dataset):
         #print("audios", len(self.new_audios))
         
         
-        test_final = "/ailab-train/speech/zhanghaomin/scps/tango-master/data/test_audiocaps_subset.json"
+        test_final = "./tests/scps/tango-master/data/test_audiocaps_subset.json"
         test_utts = {}
         with open(test_final, "r") as fr:
             for line in fr.readlines():
@@ -567,7 +567,7 @@ class Text2AudioDataset(Dataset):
             self.audioset_sl_indices = []
             audioset_sl_path_train = "/zhanghaomin/codes2/tango-master/data/train_audioset_sl.json"
             audioset_sl_path_val = "/zhanghaomin/codes2/tango-master/data/val_audioset_sl.json"
-            audioset_sl_path_train_val = "/ailab-train/speech/zhanghaomin/scps/tango-master/data/train_val_audioset_sl.json"
+            audioset_sl_path_train_val = "./tests/scps/tango-master/data/train_val_audioset_sl.json"
             if part == "train":
                 audioset_sl_path = audioset_sl_path_train
             elif part == "train_val_audioset_sl":
@@ -598,8 +598,8 @@ class Text2AudioDataset(Dataset):
             self.audiocaps_inputs = []
             self.audiocaps_audios = []
             self.audiocaps_indices = []
-            audiocaps_path_train = "/ailab-train/speech/zhanghaomin/scps/tango-master/data/audiocaps/train_audiocaps.json"
-            audiocaps_path_val = "/ailab-train/speech/zhanghaomin/scps/tango-master/data/audiocaps/test_audiocaps.json"
+            audiocaps_path_train = "./tests/scps/tango-master/data/audiocaps/train_audiocaps.json"
+            audiocaps_path_val = "./tests/scps/tango-master/data/audiocaps/test_audiocaps.json"
             if scp_ac is not None:
                 audiocaps_path_val = scp_ac
             if part in ["train", "train_val_audioset_sl"]:
@@ -633,7 +633,7 @@ class Text2AudioDataset(Dataset):
             self.bbc_soundeffects_inputs = []
             self.bbc_soundeffects_audios = []
             self.bbc_soundeffects_indices = []
-            with open("/ailab-train/speech/zhanghaomin/scps/tango-master/data/train_bbc_sound_effects.json", "r") as fr:
+            with open("./tests/scps/tango-master/data/train_bbc_sound_effects.json", "r") as fr:
                 for index, line in enumerate(fr.readlines()):
                     jsondata = json.loads(line.strip())
                     utt = jsondata["id"]
@@ -654,7 +654,7 @@ class Text2AudioDataset(Dataset):
             self.freesound_inputs = []
             self.freesound_audios = []
             self.freesound_indices = []
-            with open("/ailab-train/speech/zhanghaomin/scps/tango-master/data/train_freesound.json", "r") as fr:
+            with open("./tests/scps/tango-master/data/train_freesound.json", "r") as fr:
                 for index, line in enumerate(fr.readlines()):
                     jsondata = json.loads(line.strip())
                     utt = jsondata["id"]
@@ -675,7 +675,7 @@ class Text2AudioDataset(Dataset):
             self.soundbible_inputs = []
             self.soundbible_audios = []
             self.soundbible_indices = []
-            with open("/ailab-train/speech/zhanghaomin/scps/tango-master/data/train_soundbible.json", "r") as fr:
+            with open("./tests/scps/tango-master/data/train_soundbible.json", "r") as fr:
                 for index, line in enumerate(fr.readlines()):
                     jsondata = json.loads(line.strip())
                     utt = jsondata["id"]
@@ -731,7 +731,7 @@ class Text2AudioDataset(Dataset):
             FN = 0
             FN2 = 0
             if SCORE_THRESHOLD_TRAIN["audioset"] == "af-audioset":
-                audioset_path = "/ailab-train/speech/zhanghaomin/scps/audioset/audioset_train_af.json"
+                audioset_path = "./tests/scps/audioset/audioset_train_af.json"
             else:
                 audioset_path = "/ckptstorage/zhanghaomin/audioset/audioset_train.json"
             with open(audioset_path, "r") as fr:
@@ -829,7 +829,7 @@ class Text2AudioDataset(Dataset):
             self.tangopromptbank_inputs = []
             self.tangopromptbank_audios = []
             self.tangopromptbank_indices = []
-            with open("/ailab-train/speech/zhanghaomin/scps/TangoPromptBank/data.json", "r") as fr:
+            with open("./tests/scps/TangoPromptBank/data.json", "r") as fr:
                 for index, line in enumerate(fr.readlines()):
                     jsondata = json.loads(line.strip())
                     caption = jsondata["captions"]
@@ -848,7 +848,7 @@ class Text2AudioDataset(Dataset):
             self.musiccaps_inputs = []
             self.musiccaps_audios = []
             self.musiccaps_indices = []
-            with open("/ailab-train/speech/zhanghaomin/scps/musiccap/musiccaps.jsonl", "r") as fr:
+            with open("./tests/scps/musiccap/musiccaps.jsonl", "r") as fr:
                 for index, line in enumerate(fr.readlines()):
                     jsondata = json.loads(line.strip())
                     caption = jsondata["caption"]
@@ -894,8 +894,8 @@ class Text2AudioDataset(Dataset):
             self.boom_epic_indices = []
             #boom_epic_train = "/ckptstorage/zhanghaomin/giantsoundeffects/train_animals_mixture2.jsonl"
             #boom_epic_val = "/ckptstorage/zhanghaomin/giantsoundeffects/test_animals_mixture2.jsonl"
-            boom_epic_train = "/ailab-train/speech/zhanghaomin/scps/giantsoundeffects/train.jsonl"
-            boom_epic_val = "/ailab-train/speech/zhanghaomin/scps/giantsoundeffects/test.jsonl"
+            boom_epic_train = "./tests/scps/giantsoundeffects/train.jsonl"
+            boom_epic_val = "./tests/scps/giantsoundeffects/test.jsonl"
             if part in ["train", "train_val_audioset_sl"]:
                 boom_epic_path = boom_epic_train
             else:
@@ -923,7 +923,7 @@ class Text2AudioDataset(Dataset):
             self.audios_vggsound = []
             self.indices_vggsound = []
             if part in ["train", "train_val_audioset_sl"]:
-                path = "/ailab-train/speech/zhanghaomin/scps/VGGSound/train.scp"
+                path = "./tests/scps/VGGSound/train.scp"
                 with open(path, "r") as fr:
                     for index, line in enumerate(fr.readlines()):
                         video_path, text = line.strip().split("\t")
@@ -939,7 +939,7 @@ class Text2AudioDataset(Dataset):
                     end = vgg_test[2]
                     step = vgg_test[3]
                 else:
-                    path = "/ailab-train/speech/zhanghaomin/scps/VGGSound/test.scp"
+                    path = "./tests/scps/VGGSound/test.scp"
                     start = 0
                     end = 200
                     step = 1
@@ -957,9 +957,9 @@ class Text2AudioDataset(Dataset):
             self.audios_instruments = []
             self.indices_instruments = []
             if part in ["train", "train_val_audioset_sl"]:
-                ####path = "/ailab-train/speech/zhanghaomin/scps/instruments/train.scp"
-                ####path = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_2h/train.scp"
-                path = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_20h/v2a_giant_piano2/train.scp"
+                ####path = "./tests/scps/instruments/train.scp"
+                ####path = "./tests/scps/instruments/piano_2h/train.scp"
+                path = "./tests/scps/instruments/piano_20h/v2a_giant_piano2/train.scp"
                 with open(path, "r") as fr:
                     for index, line in enumerate(fr.readlines()):
                         video_path, text = line.strip().split("\t")
@@ -975,9 +975,9 @@ class Text2AudioDataset(Dataset):
                     end = vgg_test[2]
                     step = vgg_test[3]
                 else:
-                    ####path = "/ailab-train/speech/zhanghaomin/scps/instruments/test.scp"
-                    ####path = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_2h/test.scp"
-                    path = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_20h/v2a_giant_piano2/test.scp"
+                    ####path = "./tests/scps/instruments/test.scp"
+                    ####path = "./tests/scps/instruments/piano_2h/test.scp"
+                    path = "./tests/scps/instruments/piano_20h/v2a_giant_piano2/test.scp"
                     start = 0
                     end = 200
                     step = 1
@@ -1031,7 +1031,7 @@ class Text2AudioDataset(Dataset):
         return s1, s2, s3
 
     def read_audio_from_video(self, video_path):
-        if video_path.startswith("/ailab-train/speech/zhanghaomin/VGGSound/"):
+        if video_path.startswith("/ailab-train2/speech/zhanghaomin/VGGSound/"):
             audio_path = video_path.replace("/video/", "/audio/").replace(".mp4", ".wav")
         else:
             audio_path = video_path.replace(".mp4", ".generated.wav")
@@ -1197,7 +1197,7 @@ class Text2AudioDataset(Dataset):
             for i in indices:
                 if i in self.bad_ids:
                     continue
-                if self.audios_vggsound[i].startswith("/ailab-train/speech/zhanghaomin/VGGSound/"):
+                if self.audios_vggsound[i].startswith("/ailab-train2/speech/zhanghaomin/VGGSound/"):
                     if self.video_encoder == "clip_vit":
                         feature_path = self.audios_vggsound[i].replace("/video/", "/feature/").replace(".mp4", ".npz")
                     elif self.video_encoder == "clip_vit2":
@@ -1277,7 +1277,7 @@ class Text2AudioDataset(Dataset):
             for i in indices:
                 if i in self.bad_ids_instruments:
                     continue
-                if self.audios_instruments[i].startswith("/ailab-train/speech/zhanghaomin/VGGSound/"):
+                if self.audios_instruments[i].startswith("/ailab-train2/speech/zhanghaomin/VGGSound/"):
                     if self.video_encoder == "clip_vit":
                         feature_path = self.audios_instruments[i].replace("/video/", "/feature/").replace(".mp4", ".npz")
                     elif self.video_encoder == "clip_vit2":

@@ -1,7 +1,7 @@
 <div align="center">
 <p align="center">
   <h2>Video to Audio and Piano</h2>
-  <a href="https://arxiv.org">Paper</a> | <a href="https://xxxx.github.io">Webpage</a> | <a href="https://huggingface.co/spaces">Huggingface Demo</a> | <a href="https://huggingface.co">Models</a>
+  <a href="https://arxiv.org">Paper</a> | <a href="https://xxxx.github.io">Webpage</a> | <a href="https://huggingface.co/spaces">Huggingface Demo</a> | <a href="https://huggingface.co/lshzhm/Video-to-Audio-and-Piano/tree/main">Models</a>
 </p>
 </div>
 
@@ -11,22 +11,47 @@
 
 ## Installation
 
+**1. Create a conda environment**
+
+```bash
+conda create -n v2ap python=3.10
+conda activate v2ap
+```
+
+**2. Install requirements**
+
+```bash
+pip install -r requirements.txt
+```
+
 
 **Pretrained models**
 
-The models are available at https://huggingface.co/. See [MODELS.md](./MODELS.md) for more details.
+The models are available at https://huggingface.co/lshzhm/Video-to-Audio-and-Piano/tree/main.
 
 
 ## Inference
 
-python src/inference_v2ap.py
+**1. Video-to-Piano inference**
 
+```bash
+python src/inference_v2p.py
+```
+
+**1. Video-to-Audio inference**
+
+```bash
+python src/inference_v2a.py
+```
 
 ## Dateset is in progress
 
 
 ## Acknowledgement
 
-- [E2TTS](https://github.com/lucidrains/e2-tts-pytorch) for CFM structure and base e2 implementation
+- [Audeo](https://github.com/shlizee/Audeo) for video to midi prediction
+- [E2TTS](https://github.com/lucidrains/e2-tts-pytorch) for CFM structure and base E2 implementation
+- [FLAN-T5](https://huggingface.co/google/flan-t5-large) for FLAN-T5 text encode
+- [CLIP](https://huggingface.co/laion/CLIP-ViT-bigG-14-laion2B-39B-b160k) for CLIP image encode
 - [AudioLDM Eval](https://github.com/haoheliu/audioldm_eval) for audio evaluation
 

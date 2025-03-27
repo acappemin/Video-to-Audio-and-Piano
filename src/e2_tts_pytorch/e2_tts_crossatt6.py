@@ -59,7 +59,7 @@ import traceback
 import numpy as np
 from moviepy.editor import AudioFileClip, VideoFileClip
 from transformers import CLIPImageProcessor, CLIPVisionModelWithProjection
-import open_clip
+#import open_clip
 from transformers import AutoImageProcessor, AutoModel
 from PIL import Image
 import time

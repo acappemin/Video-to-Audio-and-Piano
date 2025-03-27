@@ -52,7 +52,7 @@ from transformers import AutoTokenizer
 from transformers import T5EncoderModel
 from transformers import EncodecModel, AutoProcessor
 
-sys.path.insert(0, "/ailab-train/speech/shansizhe/audeo/")
+sys.path.insert(0, "./src/audeo/")
 import Video2RollNet
 import torchvision.transforms as transforms
 
@@ -82,7 +82,7 @@ import traceback
 import numpy as np
 from moviepy.editor import AudioFileClip, VideoFileClip
 from transformers import CLIPImageProcessor, CLIPVisionModelWithProjection
-import open_clip
+#import open_clip
 from transformers import AutoImageProcessor, AutoModel
 from PIL import Image
 import time
@@ -1409,8 +1409,8 @@ class E2TTS(Module):
         #    self.vocos = VaeWrapper() if use_vocos else None
 
         if if_text_encoder2:
-            self.tokenizer2 = AutoTokenizer.from_pretrained("/ailab-train/speech/zhanghaomin/models/flan-t5-large")
-            self.text_encoder2 = T5EncoderModel.from_pretrained("/ailab-train/speech/zhanghaomin/models/flan-t5-large")
+            self.tokenizer2 = AutoTokenizer.from_pretrained("./ckpts/flan-t5-large")
+            self.text_encoder2 = T5EncoderModel.from_pretrained("./ckpts/flan-t5-large")
             for param in self.text_encoder2.parameters():
                 param.requires_grad = False
             self.text_encoder2.eval()
@@ -1419,35 +1419,35 @@ class E2TTS(Module):
         self.proj_frames = Linear(NOTES, dim_frames)
         if if_clip_encoder:
             if video_encoder == "clip_vit":
-                pass
-                ####self.image_processor = CLIPImageProcessor()
-                #####self.image_encoder = CLIPVisionModelWithProjection.from_pretrained("/ailab-train/speech/zhanghaomin/models/IP-Adapter/", subfolder="models/image_encoder")
-                ####self.image_encoder = CLIPVisionModelWithProjection.from_pretrained("/ailab-train/speech/zhanghaomin/models/IP-Adapter/", subfolder="sdxl_models/image_encoder")
+                ####pass
+                self.image_processor = CLIPImageProcessor()
+                #self.image_encoder = CLIPVisionModelWithProjection.from_pretrained("/ailab-train2/speech/zhanghaomin/models/IP-Adapter/", subfolder="models/image_encoder")
+                self.image_encoder = CLIPVisionModelWithProjection.from_pretrained("./ckpts/IP-Adapter/", subfolder="sdxl_models/image_encoder")
             elif video_encoder == "clip_vit2":
-                self.image_processor = AutoProcessor.from_pretrained("/ailab-train/speech/zhanghaomin/models/clip-vit-large-patch14-336/")
-                self.image_encoder = CLIPVisionModelWithProjection.from_pretrained("/ailab-train/speech/zhanghaomin/models/clip-vit-large-patch14-336/")
+                self.image_processor = AutoProcessor.from_pretrained("/ailab-train2/speech/zhanghaomin/models/clip-vit-large-patch14-336/")
+                self.image_encoder = CLIPVisionModelWithProjection.from_pretrained("/ailab-train2/speech/zhanghaomin/models/clip-vit-large-patch14-336/")
             elif video_encoder == "clip_convnext":
                 self.image_encoder, _, self.image_processor = open_clip.create_model_and_transforms("hf-hub:laion/CLIP-convnext_xxlarge-laion2B-s34B-b82K-augreg-soup")
             elif video_encoder == "dinov2":
-                self.image_processor = AutoImageProcessor.from_pretrained("/ailab-train/speech/zhanghaomin/models/dinov2-giant/")
-                self.image_encoder = AutoModel.from_pretrained("/ailab-train/speech/zhanghaomin/models/dinov2-giant/")
+                self.image_processor = AutoImageProcessor.from_pretrained("/ailab-train2/speech/zhanghaomin/models/dinov2-giant/")
+                self.image_encoder = AutoModel.from_pretrained("/ailab-train2/speech/zhanghaomin/models/dinov2-giant/")
             elif video_encoder == "mixed":
                 pass
                 #self.image_processor1 = CLIPImageProcessor()
-                #self.image_encoder1 = CLIPVisionModelWithProjection.from_pretrained("/ailab-train/speech/zhanghaomin/models/IP-Adapter/", subfolder="sdxl_models/image_encoder")
-                #self.image_processor2 = AutoProcessor.from_pretrained("/ailab-train/speech/zhanghaomin/models/clip-vit-large-patch14-336/")
-                #self.image_encoder2 = CLIPVisionModelWithProjection.from_pretrained("/ailab-train/speech/zhanghaomin/models/clip-vit-large-patch14-336/")
+                #self.image_encoder1 = CLIPVisionModelWithProjection.from_pretrained("/ailab-train2/speech/zhanghaomin/models/IP-Adapter/", subfolder="sdxl_models/image_encoder")
+                #self.image_processor2 = AutoProcessor.from_pretrained("/ailab-train2/speech/zhanghaomin/models/clip-vit-large-patch14-336/")
+                #self.image_encoder2 = CLIPVisionModelWithProjection.from_pretrained("/ailab-train2/speech/zhanghaomin/models/clip-vit-large-patch14-336/")
                 #self.image_encoder3, _, self.image_processor3 = open_clip.create_model_and_transforms("hf-hub:laion/CLIP-convnext_xxlarge-laion2B-s34B-b82K-augreg-soup")
-                #self.image_processor4 = AutoImageProcessor.from_pretrained("/ailab-train/speech/zhanghaomin/models/dinov2-giant/")
-                #self.image_encoder4 = AutoModel.from_pretrained("/ailab-train/speech/zhanghaomin/models/dinov2-giant/")
+                #self.image_processor4 = AutoImageProcessor.from_pretrained("/ailab-train2/speech/zhanghaomin/models/dinov2-giant/")
+                #self.image_encoder4 = AutoModel.from_pretrained("/ailab-train2/speech/zhanghaomin/models/dinov2-giant/")
             else:
                 self.image_processor = None
                 self.image_encoder = None
             if video_encoder != "mixed":
-                pass
-                ####for param in self.image_encoder.parameters():
-                ####    param.requires_grad = False
-                ####self.image_encoder.eval()
+                ####pass
+                for param in self.image_encoder.parameters():
+                    param.requires_grad = False
+                self.image_encoder.eval()
             else:
                 #for param in self.image_encoder1.parameters():
                 #    param.requires_grad = False
@@ -1674,7 +1674,7 @@ class E2TTS(Module):
                 else:
                     start_sample = 0
                     max_sample = None
-                if video_path.startswith("/ailab-train/speech/zhanghaomin/VGGSound/"):
+                if video_path.startswith("/ailab-train2/speech/zhanghaomin/VGGSound/"):
                     if self.video_encoder == "clip_vit":
                         feature_path = video_path.replace("/video/", "/feature/").replace(".mp4", ".npz")
                     elif self.video_encoder == "clip_vit2":
@@ -1839,7 +1839,8 @@ class E2TTS(Module):
                 else:
                     start_sample = 0
                     max_sample = None
-                if video_path.startswith("/ailab-train/speech/zhanghaomin/scps/instruments/"):
+                ####if video_path.startswith("/ailab-train2/speech/zhanghaomin/scps/instruments/"):
+                if "/piano_2h_cropped2_cuts/" in video_path:
                     pass
                 else:
                     #midi_gts.append(None)
@@ -1879,7 +1880,8 @@ class E2TTS(Module):
                 start_sample = 0
                 max_sample = None
             
-            if video_path.startswith("/ailab-train/speech/zhanghaomin/scps/instruments/"):
+            ####if video_path.startswith("/ailab-train2/speech/zhanghaomin/scps/instruments/"):
+            if "/piano_2h_cropped2_cuts/" in video_path:
                 frames_raw_path = video_path.replace(".mp4", ".generated_frames_raw.2.npz")
                 if not os.path.exists(frames_raw_path):
                     frames, duration = read_frames_with_moviepy(video_path, max_frame_nums=None)
@@ -1924,7 +1926,7 @@ class E2TTS(Module):
             
             ####video_multi = 3.0
             video_multi = 2.5
-
+            
             interpolated_frames_raw = []
             frame_size_video = int(video_multi*320)
             for i in range(start_sample, max_sample+frame_size_video, frame_size_video):
@@ -1945,9 +1947,10 @@ class E2TTS(Module):
             video_lens.append(interpolated_frames_raw.shape[0])
             
             ####midi_gt
-            midi_gt = torch.from_numpy(np.load(video_path.replace(".mp4", ".3.npy")).astype(np.float32))[:,NOTTE_MIN:NOTE_MAX+1]
-            #print("midi_gt", midi_gt.shape, midi_gt.max(), midi_gt.min(), torch.abs(midi_gt).mean())
-            midi_gts.append(midi_gt.unsqueeze(0))
+            ####midi_gt = torch.from_numpy(np.load(video_path.replace(".mp4", ".3.npy")).astype(np.float32))[:,NOTTE_MIN:NOTE_MAX+1]
+            #####print("midi_gt", midi_gt.shape, midi_gt.max(), midi_gt.min(), torch.abs(midi_gt).mean())
+            ####midi_gts.append(midi_gt.unsqueeze(0))
+            midi_gts.append(None)
         
         if len(video_frames) == 0:
             return None, None
@@ -2430,10 +2433,10 @@ class E2TTS(Module):
             frames_embed_t = frames_embed[:,:(t//3)*3,:].reshape(b,t//3,3,f).mean(dim=2)
             midis_t = midis[:,:(t//3)*3,:].reshape(b,t//3,3,f).mean(dim=2)
             mask_t = mask[-frames_embed.shape[0]:,:(t//3)*3].reshape(b,t//3,3).to(torch.float32).mean(dim=2) >= 0.99
-            tp = ((frames_embed_t>=0.75)*(midis_t>=0.5)).to(torch.float)[mask_t[-frames_embed_t.shape[0]:,...]].sum()
-            fp = ((frames_embed_t>=0.75)*(midis_t<0.5)).to(torch.float)[mask_t[-frames_embed_t.shape[0]:,...]].sum()
-            fn = ((frames_embed_t<0.75)*(midis_t>=0.5)).to(torch.float)[mask_t[-frames_embed_t.shape[0]:,...]].sum()
-            tn = ((frames_embed_t<0.75)*(midis_t<0.5)).to(torch.float)[mask_t[-frames_embed_t.shape[0]:,...]].sum()
+            tp = ((frames_embed_t>=0.4)*(midis_t>=0.5)).to(torch.float)[mask_t[-frames_embed_t.shape[0]:,...]].sum()
+            fp = ((frames_embed_t>=0.4)*(midis_t<0.5)).to(torch.float)[mask_t[-frames_embed_t.shape[0]:,...]].sum()
+            fn = ((frames_embed_t<0.4)*(midis_t>=0.5)).to(torch.float)[mask_t[-frames_embed_t.shape[0]:,...]].sum()
+            tn = ((frames_embed_t<0.4)*(midis_t<0.5)).to(torch.float)[mask_t[-frames_embed_t.shape[0]:,...]].sum()
             #print("tp fp fn tn", tp, fp, fn, tn)
             pre = tp / (tp + fp) if (tp + fp) != 0 else torch.tensor(0.0, device=device)
             rec = tp / (tp + fn) if (tp + fn) != 0 else torch.tensor(0.0, device=device)

@@ -1,2 +1,6 @@
 **/__pycache__
 src/audeo/data/
+ckpts/
+outputs/
+outputs_piano/
+outputs_vgg/
