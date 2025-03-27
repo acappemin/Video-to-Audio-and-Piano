@@ -52,7 +52,7 @@ The models are available at https://huggingface.co/lshzhm/Video-to-Audio-and-Pia
 python src/inference_v2p.py
 ```
 
-**1. Video-to-Audio inference**
+**2. Video-to-Audio inference**
 
 ```bash
 python src/inference_v2a.py

@@ -4,3 +4,5 @@ ckpts/
 outputs/
 outputs_piano/
 outputs_vgg/
+src/train*
+src/inference3*
