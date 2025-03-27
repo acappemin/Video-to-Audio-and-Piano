@@ -8,6 +8,20 @@
 
 ## Towards Video to Piano Music Generation with Chain-of-Perform Support Benchmarks
 
+## Results
+
+**1. Results of Video-to-Piano Synthesis**
+
+https://github.com/user-attachments/assets/b6218b94-1d58-4dc5-873a-c3e8eef6cd67
+
+https://github.com/user-attachments/assets/ebdd1d95-2d9e-4add-b61a-d181f0ae38d0
+
+**2. Results of Video-to-Audio Synthesis**
+
+https://github.com/user-attachments/assets/d6761371-8fc2-427c-8b2b-6d2ac22a2db2
+
+https://github.com/user-attachments/assets/50b33e54-8ba1-4fab-89d3-5a5cc4c22c9a
+
 
 ## Installation
 
