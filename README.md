@@ -1,7 +1,7 @@
 <div align="center">
 <p align="center">
   <h2>Video to Audio and Piano</h2>
-  <a href="https://arxiv.org">Paper</a> | <a href="https://acappemin.github.io/Video-to-Audio-and-Piano.github.io">Webpage</a> | <a href="https://huggingface.co/spaces">Huggingface Demo</a> | <a href="https://huggingface.co/lshzhm/Video-to-Audio-and-Piano/tree/main">Models</a>
+  <a href="https://arxiv.org">Paper</a> | <a href="https://acappemin.github.io/Video-to-Audio-and-Piano.github.io">Webpage</a> | <a href="https://huggingface.co/spaces/lshzhm/Video-to-Audio-and-Piano">Huggingface Demo</a> | <a href="https://huggingface.co/lshzhm/Video-to-Audio-and-Piano/tree/main">Models</a>
 </p>
 </div>
 
