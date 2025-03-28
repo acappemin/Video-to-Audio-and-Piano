@@ -18,15 +18,15 @@ else:
     ckpt = "./ckpts/piano5_4_2_8000.pt"
     #ckpt = "/ailab-train/speech/zhanghaomin/e2/e2_tts_experiment_v2a_encodec_more_more_more_more_piano6/dpo_100.pt"
     drop_prompt = False
-    test_scp = "./tests/vgg_test.scp"
+    test_scp = "/ailab-train/speech/zhanghaomin/scps/VGGSound/test.scp"
+    #test_scp = "./tests/vgg_test.scp"
     #####test_scp = "/ailab-train/speech/zhanghaomin/scps/instruments/test.scp"
     #####test_scp = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_2h/test.scp"
-    ####test_scp = "./tests/piano_2h_test.scp"
     #####test_scp = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_20h/v2a_giant_piano2/test.scp"
     start = 0
-    end = 2
+    end = 1000
     step = 1
-    out_dir = "./outputs_vgg/"
+    out_dir = "./outputs/outputs_vgg/"
     ####out_dir = "./outputs_piano/"
     #####out_dir = "./outputs2t_20h_dpo/"
 
