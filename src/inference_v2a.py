@@ -20,11 +20,11 @@ else:
     drop_prompt = False
     test_scp = "/ailab-train/speech/zhanghaomin/scps/VGGSound/test.scp"
     #test_scp = "./tests/vgg_test.scp"
-    #####test_scp = "/ailab-train/speech/zhanghaomin/scps/instruments/test.scp"
-    #####test_scp = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_2h/test.scp"
-    #####test_scp = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_20h/v2a_giant_piano2/test.scp"
+    ####test_scp = "/ailab-train/speech/zhanghaomin/scps/instruments/test.scp"
+    ####test_scp = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_2h/test.scp"
+    ####test_scp = "/ailab-train/speech/zhanghaomin/scps/instruments/piano_20h/v2a_giant_piano2/test.scp"
     start = 0
-    end = 1000
+    end = 2
     step = 1
     out_dir = "./outputs/outputs_vgg/"
     ####out_dir = "./outputs_piano/"
