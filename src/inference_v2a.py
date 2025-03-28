@@ -26,7 +26,7 @@ else:
     start = 0
     end = 2
     step = 1
-    out_dir = "./outputs/outputs_vgg/"
+    out_dir = "./outputs_vgg/"
     ####out_dir = "./outputs_piano/"
     #####out_dir = "./outputs2t_20h_dpo/"
 
