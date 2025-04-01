@@ -13,7 +13,7 @@ AI Lab Giant Network, Zhejiang University, University of Washington
 
 ## Results
 
-<img width="666" alt="Image" src="https://github.com/user-attachments/assets/8ba666a6-42c7-4d46-80fb-00a44802d701" />
+<img width="888" alt="Image" src="https://github.com/user-attachments/assets/8ba666a6-42c7-4d46-80fb-00a44802d701" />
 
 **1. Results of Video-to-Audio Synthesis**
 
