@@ -1,12 +1,13 @@
 <div align="center">
 <p align="center">
   <h2>Video to Audio and Piano</h2>
-  <a href="https://arxiv.org">Paper</a> | <a href="https://acappemin.github.io/Video-to-Audio-and-Piano.github.io">Webpage</a> | <a href="https://huggingface.co/spaces/lshzhm/Video-to-Audio-and-Piano">Huggingface Demo</a> | <a href="https://huggingface.co/lshzhm/Video-to-Audio-and-Piano/tree/main">Models</a>
+  <a href="https://arxiv.org/abs/2503.22200">Paper</a> | <a href="https://acappemin.github.io/Video-to-Audio-and-Piano.github.io">Webpage</a> | <a href="https://huggingface.co/spaces/lshzhm/Video-to-Audio-and-Piano">Huggingface Demo</a> | <a href="https://huggingface.co/lshzhm/Video-to-Audio-and-Piano/tree/main">Models</a>
 </p>
 </div>
 
 ## Enhance Generation Quality of Flow Matching V2A Model via Multi-Step CoT-Like Guidance and Combined Preference Optimization
-## Towards Video to Piano Music Generation with Chain-of-Perform Support Benchmarks
+
+[Haomin Zhang](https://scholar.google.com/citations?user=cxj9ZbAAAAAJ), [Sizhe Shan](), [Haoyu Wang](), [Zihao Chen](), [Xiulong Liu](), [Yuki Chaofan Ding](), [Xinhan Di]()
 
 ## Results
 
@@ -59,9 +60,6 @@ python src/inference_v2p.py
 ```
 
 ## Dateset is in progress
-
-
-## Metrix
 
 
 ## Acknowledgement
