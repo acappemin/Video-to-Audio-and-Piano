@@ -7,9 +7,13 @@
 
 ## Enhance Generation Quality of Flow Matching V2A Model via Multi-Step CoT-Like Guidance and Combined Preference Optimization
 
-[Haomin Zhang](https://scholar.google.com/citations?user=cxj9ZbAAAAAJ), [Sizhe Shan](), [Haoyu Wang](), [Zihao Chen](), [Xiulong Liu](), [Yuki Chaofan Ding](), [Xinhan Di]()
+[Haomin Zhang](https://scholar.google.com/citations?user=cxj9ZbAAAAAJ), [Sizhe Shan](), [Haoyu Wang](), [Zihao Chen](), [Xiulong Liu](), [Chaofan Ding](), [Xinhan Di]()
+
+AI Lab Giant Network, Zhejiang University, University of Washington
 
 ## Results
+
+<img width="666" alt="Image" src="https://github.com/user-attachments/assets/8ba666a6-42c7-4d46-80fb-00a44802d701" />
 
 **1. Results of Video-to-Audio Synthesis**
 
