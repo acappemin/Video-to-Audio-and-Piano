@@ -1540,9 +1540,11 @@ class E2TTS(Module):
         x = self.video2roll_net(x)
         x = nn.Sigmoid()(x)
         #print("x output", x.shape)  # [251, 51]
-        ####x = x.reshape(b, t, 1, NOTES).repeat(1,1,3,1).reshape(b, t*3, NOTES)
-        t5 = (t*5//2)*2
-        x = x.reshape(b, t, 1, NOTES).repeat(1,1,5,1).reshape(b, t*5, NOTES)[:,:t5,:].reshape(b, t5//2, 2, NOTES).mean(2)
+
+        ####video_multi
+        x = x.reshape(b, t, 1, NOTES).repeat(1,1,3,1).reshape(b, t*3, NOTES)
+        ####t5 = (t*5//2)*2
+        ####x = x.reshape(b, t, 1, NOTES).repeat(1,1,5,1).reshape(b, t*5, NOTES)[:,:t5,:].reshape(b, t5//2, 2, NOTES).mean(2)
         b, d, _ = x.shape
         
         #print("encode_frames", x.shape, l)
@@ -1924,8 +1926,8 @@ class E2TTS(Module):
             if max_sample is None:
                 max_sample = int(duration * 24000)
             
-            ####video_multi = 3.0
-            video_multi = 2.5
+            video_multi = 3.0
+            ####video_multi = 2.5
             
             interpolated_frames_raw = []
             frame_size_video = int(video_multi*320)

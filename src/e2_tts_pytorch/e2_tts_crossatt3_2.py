@@ -1540,6 +1540,8 @@ class E2TTS(Module):
         x = self.video2roll_net(x)
         x = nn.Sigmoid()(x)
         #print("x output", x.shape)  # [251, 51]
+
+        ####video_multi
         ####x = x.reshape(b, t, 1, NOTES).repeat(1,1,3,1).reshape(b, t*3, NOTES)
         t5 = (t*5//2)*2
         x = x.reshape(b, t, 1, NOTES).repeat(1,1,5,1).reshape(b, t*5, NOTES)[:,:t5,:].reshape(b, t5//2, 2, NOTES).mean(2)
