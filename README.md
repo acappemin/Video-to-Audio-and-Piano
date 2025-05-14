@@ -13,19 +13,21 @@ AI Lab Giant Network, Zhejiang University, University of Washington
 
 ## Results
 
+**Objective metrics**
+
 <img width="100%" alt="Image" src="https://github.com/user-attachments/assets/8ba666a6-42c7-4d46-80fb-00a44802d701"/>
 
-**1. Results of Video-to-Audio Synthesis**
+**Results of Video-to-Audio Synthesis**
 
 https://github.com/user-attachments/assets/d6761371-8fc2-427c-8b2b-6d2ac22a2db2
 
 https://github.com/user-attachments/assets/50b33e54-8ba1-4fab-89d3-5a5cc4c22c9a
 
-**2. Results of Video-to-Piano Synthesis**
+**Results of Video-to-Piano Synthesis**
 
-#https://github.com/user-attachments/assets/b6218b94-1d58-4dc5-873a-c3e8eef6cd67
+<!--https://github.com/user-attachments/assets/b6218b94-1d58-4dc5-873a-c3e8eef6cd67
 
-#https://github.com/user-attachments/assets/ebdd1d95-2d9e-4add-b61a-d181f0ae38d0
+https://github.com/user-attachments/assets/ebdd1d95-2d9e-4add-b61a-d181f0ae38d0-->
 
 https://github.com/user-attachments/assets/1bf7cb2e-084a-4c70-969d-4da6a9632385
 
