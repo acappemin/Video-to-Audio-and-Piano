@@ -23,10 +23,25 @@ https://github.com/user-attachments/assets/50b33e54-8ba1-4fab-89d3-5a5cc4c22c9a
 
 **2. Results of Video-to-Piano Synthesis**
 
-https://github.com/user-attachments/assets/b6218b94-1d58-4dc5-873a-c3e8eef6cd67
+#https://github.com/user-attachments/assets/b6218b94-1d58-4dc5-873a-c3e8eef6cd67
 
-https://github.com/user-attachments/assets/ebdd1d95-2d9e-4add-b61a-d181f0ae38d0
+#https://github.com/user-attachments/assets/ebdd1d95-2d9e-4add-b61a-d181f0ae38d0
 
+https://github.com/user-attachments/assets/1bf7cb2e-084a-4c70-969d-4da6a9632385
+
+https://github.com/user-attachments/assets/040cd7bd-e74c-4b06-ace0-afba2271fa49
+
+https://github.com/user-attachments/assets/ddf762ad-2d12-41b2-b3aa-edf0d8f9549c
+
+https://github.com/user-attachments/assets/5a6baa3d-f563-4812-93c9-2faad3af9cba
+
+https://github.com/user-attachments/assets/d06a7afc-4b8f-4b4d-bf27-29624355da03
+
+https://github.com/user-attachments/assets/7a3cd7fc-6a27-476a-8b24-aa5c8ddbfff2
+
+https://github.com/user-attachments/assets/2556e012-bbc9-465a-a107-16d77761ae89
+
+https://github.com/user-attachments/assets/be14f825-0133-490d-bc20-5b760ffc8588
 
 ## Installation
 
